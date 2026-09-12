@@ -1,0 +1,11 @@
+<!doctype html><html lang="en-GH"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Firebase diagnostics — MarketHub</title><link rel="stylesheet" href="css/style.css"></head><body><main class="container page narrow"><div class="form-card"><h1>Firebase diagnostics</h1><p>This page checks Authentication and a public Firestore listing read.</p><pre id="out" style="white-space:pre-wrap;background:#f4f4f4;padding:16px;border-radius:10px">Checking…</pre><a class="btn btn-secondary" href="index.html">Back to MarketHub</a></div></main><script src="sw-reset.js"></script><script type="module">
+import { auth, db } from "./js/firebase.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
+import { collection, query, where, limit, getDocs } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+const out=document.getElementById("out");
+const lines=[]; const add=x=>{lines.push(x);out.textContent=lines.join("\n");};
+add("Firebase app initialized.");
+onAuthStateChanged(auth,u=>add(u?`Auth: signed in as ${u.email || u.uid}`:"Auth: signed out"));
+try { const s=await getDocs(query(collection(db,"listings"),where("status","==","active"),limit(1))); add(`Firestore: OK (${s.size} active listing sample returned).`); }
+catch(e){ add(`Firestore: FAILED\nCode: ${e?.code || "unknown"}\nMessage: ${e?.message || e}`); }
+</script></body></html>

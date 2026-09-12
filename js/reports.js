@@ -1,0 +1,3 @@
+import {auth,db} from "./firebase.js";
+import {addDoc,collection,serverTimestamp} from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+document.getElementById("report-form")?.addEventListener("submit",async e=>{e.preventDefault();const out=document.getElementById("report-status");if(!auth.currentUser){out.textContent="Please sign in.";return}try{await addDoc(collection(db,"reports"),{reporterId:auth.currentUser.uid,listingId:document.getElementById("listingId").value.trim(),reason:document.getElementById("reason").value,details:document.getElementById("details").value.trim(),status:"open",createdAt:serverTimestamp(),updatedAt:serverTimestamp()});out.textContent="Report submitted. Thank you."}catch(x){out.textContent=x.message}});

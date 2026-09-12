@@ -1,0 +1,11 @@
+# Firebase local files
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Secrets / local config
+.env
+.env.*
+*.pem
+service-account*.json

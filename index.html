@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-GH">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#D90429">
+  <meta name="description" content="A modern Ghana classifieds marketplace for buying and selling locally.">
+  <title>MarketHub Ghana — Buy & Sell</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="safety-topbar" role="note">Buy safely: meet in public, verify goods and never share OTPs.</div>
+
+  <div id="site-header"></div>
+  <main>
+    <section class="hero">
+  <div class="container">
+    <nav class="category-bar" aria-label="Browse categories">
+      <a class="category-btn" href="search.html?category=vehicles">Vehicles</a>
+      <a class="category-btn" href="search.html?category=property">Property</a>
+      <a class="category-btn" href="search.html?category=phones">Phones &amp; Tablets</a>
+      <a class="category-btn" href="search.html?category=electronics">Electronics</a>
+      <a class="category-btn" href="search.html?category=fashion">Fashion</a>
+      <a class="category-btn" href="search.html?category=home">Home &amp; Garden</a>
+      <a class="category-btn" href="search.html?category=jobs">Jobs</a>
+      <a class="category-btn" href="search.html?category=services">Services</a>
+      <a class="category-btn" href="search.html?category=agriculture">Agriculture</a>
+      <a class="category-btn" href="search.html?category=other">Other</a>
+    </nav>
+
+<form class="search-panel" id="heroSearch">
+      <div class="search-field">
+        <label for="heroQuery">Search listings</label>
+        <input id="heroQuery" name="q" type="search" placeholder="What are you looking for?" autocomplete="off">
+      </div>
+      <div class="search-field">
+        <label for="heroLocation">Location</label>
+        <select id="heroLocation" name="location">
+          <option value="">All Ghana</option>
+          <option value="greater-accra">Greater Accra</option>
+          <option value="ashanti">Ashanti</option>
+          <option value="central">Central</option>
+          <option value="eastern">Eastern</option>
+          <option value="western">Western</option>
+          <option value="volta">Volta</option>
+          <option value="northern">Northern</option>
+          <option value="upper-east">Upper East</option>
+          <option value="upper-west">Upper West</option>
+          <option value="bono">Bono</option>
+          <option value="bono-east">Bono East</option>
+          <option value="ahafo">Ahafo</option>
+          <option value="oti">Oti</option>
+          <option value="savannah">Savannah</option>
+          <option value="north-east">North East</option>
+          <option value="western-north">Western North</option>
+          <option value="rest-of-ghana">Rest of Ghana</option>
+        </select>
+      </div>
+      <button class="btn btn-primary search-submit" type="submit">Search</button>
+    </form>
+  </div>
+</section>
+    <section class="container section">
+      <div class="section-head"><div><span class="eyebrow">Categories</span><h2>Browse categories</h2></div><a href="category.html">View all</a></div>
+      <div id="category-grid" class="category-grid"></div>
+    </section>
+    <section class="container section">
+      <div class="section-head"><div><span class="eyebrow">Fresh listings</span><h2>Recently posted</h2></div><a href="search.html">See more</a></div>
+      <div id="listing-grid" class="listing-grid"></div>
+      <div id="home-empty" class="empty hidden">No listings yet. Be the first to post one.</div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <div id="mobile-nav"></div>
+  <script src="sw-reset.js"></script><script type="module" src="js/app.js"></script>
+</body>
+</html>
